@@ -29,20 +29,6 @@ External resources
 
 - Less integrated with `CloudFormation`. I would only use this for simple tasks
 
-## Learnings
-
-- Event shape are different than anywhere on the internet, you should dig into a file called `events.go`
-
-- WTF is protocol 2.0.0 ?
-
-- the schemas (and the resource itself) have versions? If you want to update you should probably use `cfn submit --set-default`
-
-- `TAGS=logging make` to make sure the logs are properly forwarded to cloudwatch
-
-- wtf is happening with logs?
-
-- the golang plugin does not have the _nameUtils_ exposed by the java or python plugins
-
 ## Deployment
 
 1. Run the `make build` command
@@ -54,3 +40,9 @@ External resources
 - The tests events are different than the ones within Java and Python examples. See the `example_inputs/create.json` file
 
 - The credentials that you use to test things have to be real credentials
+
+- The golang plugin does not have the _nameUtils_ exposed by the java or python plugins
+
+- Remember about versioning! The schema (thus you handlers) are versioned.
+  You probably want to set the version you are deploying as the default one.
+  See the `deploy` step within `Makefile`.
