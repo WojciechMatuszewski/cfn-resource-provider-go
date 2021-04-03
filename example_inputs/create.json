@@ -1,0 +1,19 @@
+{
+  "action": "CREATE",
+  "awsAccountId": "",
+  "callbackContext": null,
+  "bearerToken": "aaa",
+  "region": "us-east-1",
+  "requestData": {
+    "callerCredentials": {
+      "accessKeyId": "xxx",
+      "secretAccessKey": "xxx",
+      "sessionToken": "xxx"
+    },
+    "callbackContext": null,
+    "resourceProperties": {
+      "BucketName": "IntegrationTestBucket"
+    },
+    "previousResourceProperties": null
+  }
+}

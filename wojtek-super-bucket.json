@@ -1,0 +1,35 @@
+{
+  "typeName": "Wojtek::Super::Bucket",
+  "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+  "sourceUrl": "https://github.com/aws-cloudformation/aws-cloudformation-rpdk.git",
+  "definitions": {},
+  "properties": {
+    "BucketName": {
+      "type": "string"
+    },
+    "ResourceId": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["BucketName"],
+  "readOnlyProperties": ["/properties/ResourceId"],
+  "primaryIdentifier": ["/properties/ResourceId"],
+  "handlers": {
+    "create": {
+      "permissions": ["s3:CreateBucket"]
+    },
+    "read": {
+      "permissions": [""]
+    },
+    "update": {
+      "permissions": [""]
+    },
+    "delete": {
+      "permissions": ["s3:DeleteBucket"]
+    },
+    "list": {
+      "permissions": [""]
+    }
+  }
+}

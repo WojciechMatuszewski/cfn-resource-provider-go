@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: AWS SAM template for the Wojtek::Super::Bucket resource type
+
+Conditions:
+  Never: !Equals [a, b]
+
+Resources:
+  # Neat trick to have an "empty" resource
+  NullResource:
+    Type: Custom::Null
+    Condition: Never
+  # Comment this resource to test the delete handler
+  TypeFunction:
+    Type: Wojtek::Super::Bucket
+    Properties:
+      BucketName: TestingSam
